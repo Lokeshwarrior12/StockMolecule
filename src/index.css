@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-obsidian: #040706;
+  --bg-surface: #0a100e;
+  --bg-elevated: #0f1714;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-emerald: rgba(52, 211, 153, 0.22);
+  --emerald-accent: #10b981;
+  --emerald-soft: #34d399;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-obsidian);
+  color: #f3f6f4;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-obsidian);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Precision geometric grid from Fundora design */
+.fundora-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 35%, transparent 100%);
+}
+
+@keyframes beamSwayLeft {
+  0%, 100% {
+    transform: rotate(-18deg) translateY(-6%) scale(1);
+    opacity: 0.42;
+  }
+  50% {
+    transform: rotate(-14deg) translateY(0%) scale(1.06);
+    opacity: 0.62;
+  }
+}
+
+@keyframes beamSwayCenter {
+  0%, 100% {
+    transform: translateY(-4%) scale(1);
+    opacity: 0.48;
+  }
+  50% {
+    transform: translateY(2%) scale(1.08);
+    opacity: 0.68;
+  }
+}
+
+@keyframes beamSwayRight {
+  0%, 100% {
+    transform: rotate(18deg) translateY(-6%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(14deg) translateY(0%) scale(1.06);
+    opacity: 0.58;
+  }
+}
+
+.emerald-beam-left {
+  animation: beamSwayLeft 10s ease-in-out infinite;
+}
+
+.emerald-beam-center {
+  animation: beamSwayCenter 12s ease-in-out infinite;
+}
+
+.emerald-beam-right {
+  animation: beamSwayRight 11s ease-in-out infinite;
+}
+
+.hero-gradient-text {
+  background: linear-gradient(90deg, #ffffff 0%, #d1fae5 52%, #34d399 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .emerald-beam-left,
+  .emerald-beam-center,
+  .emerald-beam-right {
+    animation: none;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "TradeMind",
+  "description": "Cinematic quantitative stock market terminal combining 3D desert-lab storytelling, live candlestick X-ray, paper trading, and research-driven equity screening.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

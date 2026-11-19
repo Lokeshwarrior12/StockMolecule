@@ -1,20 +1,16 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# StockMolecule
 
-# Run and deploy your AI Studio app
+Learn, practice, invest. A premium, 3D-assisted market learning platform. Educational use only; nothing here is financial advice.
 
-This contains everything you need to run your app locally.
+Start with PROJECT_CONTEXT.md, then docs/TradeMind_Project_Blueprint.docx.
 
-View your app in AI Studio: https://ai.studio/apps/75623d92-5521-4320-87d4-a25e09d3f19e
+## Quick start
+    make setup    # python venv + pnpm install
+    make check    # lint, typecheck, tests (same as CI)
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Layout
+    apps/web        Next.js frontend (Day 2)
+    apps/api        FastAPI backend and workers (Day 3)
+    packages/shared generated TypeScript types
+    infra           Docker and Compose
+    docs            blueprint, mind map, ADRs
